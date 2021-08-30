@@ -1,13 +1,16 @@
 let app = require("express")();
 let http = require("http").Server(app);
 let io = require("socket.io")(http);
+let port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-http.listen(process.env.PORT || 3000, () => {
-  console.log("Listening on port *: 3000");
+app.listen(port);
+
+http.listen(port, () => {
+  console.log("Listening on port *: 8080");
 });
 
 io.on("connection", (socket) => {
