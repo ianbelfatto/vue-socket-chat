@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ChatApp_Socket</title>
+    <title>Vue.js Chat</title>
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,7 +22,7 @@
               <p v-for="user in info">{{user.username}} {{user.type}}</p>
             </div>
 
-            <div v-if="!ready" style="background-color: lightgray">
+            <div v-if="!ready">
               <h4>Enter your username</h4>
               <p>A small chat app with one room.</p>
               <form @submit.prevent="addUser">
