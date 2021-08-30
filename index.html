@@ -26,18 +26,21 @@
               <h4>Enter your username</h4>
               <p>A small chat app with one room.</p>
               <form @submit.prevent="addUser">
-                <div class="form-group row" style="padding-left: 16px; position: flex">
+                <div class="form-group row" style="padding-left: 15px; position: flex">
                   <input type="text" class="form-control col-8" v-model="username" placeholder="Enter username here" />
                   <input type="submit" value="Join" class="btn btn-sm btn-warning ml-1" />
                 </div>
               </form>
             </div>
-            <h5 v-else style="padding-left: 5px">Connected as: {{username}}</h5>
+            <p v-else style="padding-left: 5px">Connected as: {{username}}</p>
             <div class="card bg-light" v-if="ready">
               <div class="card-header text-black">
                 <h4>
-                  Welcome to the Chat
-                  <span class="float-right">{{connections}} connections</span>
+                  Welcome
+                  <span class="float-right">
+                    <b style="color: red">{{connections}}</b>
+                    connections
+                  </span>
                 </h4>
               </div>
               <ul class="list-group list-group-flush text-right">
@@ -175,7 +178,6 @@
 
     body {
       font-family: "Roboto", sans-serif;
-      font-size: 15px;
       line-height: 28px;
     }
 
